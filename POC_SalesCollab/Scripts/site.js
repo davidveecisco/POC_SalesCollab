@@ -17,7 +17,7 @@ function dialNumber() {
     var linkRef = "";
 
     if (selectedNumber == "0") {
-        alert('Please select a Number');}
+        $('#errorModal').modal('show');}
     else {
         if (iOS() == true) {
             linkRef = 'sms://+' + selectedNumber + '&body=Get%20started%20by%20sending%20this%20message%20in%20to%20sign%20up';
@@ -25,6 +25,6 @@ function dialNumber() {
         else {
             linkRef = 'sms://+' + selectedNumber + '?&body=Get%20started%20by%20sending%20this%20message%20in%20to%20sign%20up';
         }
-    }
     window.location = linkRef;
+    }
 }
