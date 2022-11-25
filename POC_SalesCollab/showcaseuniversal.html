@@ -50,7 +50,7 @@
     <script src="Scripts/bootstrap.bundle.min.js"></script>
     <script src="Scripts/scrolling-nav.js"></script>
     <script src="Scripts/site.js"></script>
-
+    <!-- https://globalcollab.webexconnectsolutions.com/showcaseuniversal.html?body=bodytext&biz=bixtext&iservice=123ser&aservice=andservice&agent=1235456&ctx=showcase-->
     <!-- https://bcrw.apple.com/urn:biz:f202d506-43c2-4ba8-b48c-27237b525ebf?
         service=iMessage&
         body=Webex%20CPaaS%20Showcase%20%2D%20Apple%20Messages%20for%20Business.%20Just%20send%20in%20this%20message%20to%20try%20this%20channel.%20 -->
@@ -62,22 +62,24 @@
 
     <script>
 
-       
+
 
         $(document).ready(function () {
+            //body=bodytext&biz=bixtext&iservice=123ser&aservice=andservice&agent=1235456&ctx=showcase
 
             var linkRef = '';
 
             var messageBody = getUrlParameter('body');
             var biz = getUrlParameter('biz');
             var iService = getUrlParameter('iservice');
+            var intentId = getUrlParameter('intent');
             var aService = getUrlParameter('aservice');
             var agent = getUrlParameter('agent');
             var ctx = getUrlParameter('ctx');
 
 
             if (iOS() == true) {
-                linkRef = 'https://bcrw.apple.com/urn:biz:' + biz + '?service=' + iService + '&body=' + messageBody;
+                linkRef = 'https://bcrw.apple.com/urn:biz:' + biz + '?service=' + iService + '&body=' + messageBody + '&biz-intent-id=' + intentId ;
             }
             else {
                 linkRef = 'https://businessmessages.google.com/widget/agent/' + agent + '?i=' + aService + '&ctx' + ctx;
