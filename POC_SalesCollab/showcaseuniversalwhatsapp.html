@@ -59,7 +59,7 @@
         i=CiQ5MjgzYmRhMS0wMGVjLTQ2Y2YtOTFiYi1lOWQ5MjQwNjA1YmYSDAil3smTBhCA9vuwAxoCdjEqFwoVaHR0cHM6Ly93d3cud2ViZXguY29t&
         ctx=showcase-->
     <!--
-    https://globalcollab.webexconnectsolutions.com/showcaseuniversal?body=Upgrade&biz=f202d506-43c2-4ba8-b48c-27237b525ebf&iservice=iMessageser&aservice=CiQ5MjgzYmRhMS0wMGVjLTQ2Y2YtOTFiYi1lOWQ5MjQwNjA1YmYSDAi2w8mXBhDA_bnaAxoCdjEqEwoRaHR0cHM6Ly93ZWJleC5jb20&agent=9283bda1-00ec-46cf-91bb-e9d9240605bf&ctx=showcase&intent=encryptedNumber
+    https://globalcollab.webexconnectsolutions.com/showcaseuniversalwhatsapp?body=Upgrade&biz=f202d506-43c2-4ba8-b48c-27237b525ebf&iservice=iMessageser&aservice=CiQ5MjgzYmRhMS0wMGVjLTQ2Y2YtOTFiYi1lOWQ5MjQwNjA1YmYSDAi2w8mXBhDA_bnaAxoCdjEqEwoRaHR0cHM6Ly93ZWJleC5jb20&agent=9283bda1-00ec-46cf-91bb-e9d9240605bf&ctx=showcase&intent=encryptedNumber
 
     -->
 
@@ -80,13 +80,14 @@
             var aService = getUrlParameter('aservice');
             var agent = getUrlParameter('agent');
             var ctx = getUrlParameter('ctx');
+            var wanum = getUrlParameter('wanum');
 
 
             if (iOS() == true) {
                 linkRef = 'https://bcrw.apple.com/urn:biz:' + biz + '?service=' + iService + '&body=' + messageBody + '&biz-intent-id=' + intentId;
             }
             else {
-                linkRef = 'https://businessmessages.google.com/widget/agent/' + agent + '?i=' + aService + '&ctx' + ctx;
+                linkRef = 'https://wa.me/' + wanum + '?text=' + messageBody;
             }
 
             window.location = linkRef;
