@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Sales Collab POC</title>
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="Content/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="Content/scrolling-nav.css" rel="stylesheet">
+    <link href="Content/Site.css" rel="stylesheet" />
+    <title></title>
+</head>
+<body id="page-top">
+    <!-- Navigation -->
+
+    <header class="text-white">
+        <div>
+            <div><img class="" src="Content/webex.png" alt="Webex"></div>
+        </div>
+    </header>
+
+    <div class="container" style="height:200px;margin:30px;color:white">
+
+        <span>If you are seeing this page it is in error, please refresh the page or check for missing query string parameters.</span>
+
+    </div>
+
+
+
+    <div class="container">
+        <div style="height: 150px;"></div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; Cisco Webex</p>
+        </div>
+    </footer>
+
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="Scripts/jquery-3.3.1.js"></script>
+    <script src="Scripts/bootstrap.bundle.min.js"></script>
+    <script src="Scripts/scrolling-nav.js"></script>
+    <script src="Scripts/site.js"></script>
+    <!-- https://globalcollab.webexconnectsolutions.com/showcaseuniversal.html?body=bodytext&biz=bixtext&iservice=123ser&aservice=andservice&agent=1235456&ctx=showcase-->
+    <!-- https://bcrw.apple.com/urn:biz:f202d506-43c2-4ba8-b48c-27237b525ebf?
+        service=iMessage&
+        body=Webex%20CPaaS%20Showcase%20%2D%20Apple%20Messages%20for%20Business.%20Just%20send%20in%20this%20message%20to%20try%20this%20channel.%20 -->
+    <!-- https://businessmessages.google.com/widget/agent/
+        9283bda1-00ec-46cf-91bb-e9d9240605bf?
+        i=CiQ5MjgzYmRhMS0wMGVjLTQ2Y2YtOTFiYi1lOWQ5MjQwNjA1YmYSDAil3smTBhCA9vuwAxoCdjEqFwoVaHR0cHM6Ly93d3cud2ViZXguY29t&
+        ctx=showcase-->
+    <!--
+    https://globalcollab.webexconnectsolutions.com/showcaseuniversalwhatsapp?body=Upgrade&biz=f202d506-43c2-4ba8-b48c-27237b525ebf&iservice=iMessageser&aservice=CiQ5MjgzYmRhMS0wMGVjLTQ2Y2YtOTFiYi1lOWQ5MjQwNjA1YmYSDAi2w8mXBhDA_bnaAxoCdjEqEwoRaHR0cHM6Ly93ZWJleC5jb20&agent=9283bda1-00ec-46cf-91bb-e9d9240605bf&ctx=showcase&intent=encryptedNumber
+    
+    https://globalcollab.webexconnectsolutions.com/showcasegen?setup=talktalk
+
+    -->
+
+
+    <script>
+
+
+
+        $(document).ready(function () {
+            //body=bodytext&biz=bixtext&iservice=123ser&aservice=andservice&agent=1235456&ctx=showcase
+
+            var linkRef = '';
+
+            var setup = getUrlParameter('setup');
+
+
+            if (iOS() == true) {
+                switch (setup) {
+                    case "talktalk":
+                        {
+                            linkRef = 'https://bcrw.apple.com/sms:open?service=iMessage&recipient=urn:biz:3a1b7da9-fb3b-4a64-9253-7dd0dc1926f8?service=iMessage&body=Please%20send%20in%20this%20message%20to%20start%20chatting%20to%20TalkTalk';
+                            break;
+                        }
+                    default: {
+                        linkRef = 'https://webex.com';
+                    }
+                }                
+            }
+            else {
+                switch (setup) {
+                    case "talktalk":
+                        {
+                            linkRef = 'https://wa.me/+447488865886?text=Please%20send%20in%20this%20message%20to%20start%20chatting%20to%20TalkTalk';
+                            break;
+                        }
+                    default: {
+                        linkRef = 'https://webex.com';
+                    }
+                }
+            }
+
+            window.location = linkRef;
+        });
+
+
+    </script>
+</body>
+</html>
+
