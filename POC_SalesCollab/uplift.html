@@ -79,7 +79,8 @@
             var aService = getUrlParameter('aservice');
             var agent = getUrlParameter('agent');
 
-
+            console.log('https://bcrw.apple.com?sms:open?service=iMessage&recipient=urn:biz:' + biz + '&body=' + messageBody + '&biz-intent-id=' + intentId);
+            console.log('https://businessmessages.google.com/widget/agent/' + agent + '?i=' + aService + '&ctx=' + intentId);
 
             if (iOS() == true) {
                 linkRef = 'https://bcrw.apple.com?sms:open?service=iMessage&recipient=urn:biz:' + biz + '&body=' + messageBody + '&biz-intent-id=' + intentId;
