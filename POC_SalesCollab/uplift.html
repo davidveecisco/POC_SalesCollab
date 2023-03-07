@@ -70,7 +70,7 @@
 
         $(document).ready(function () {
             //body=bodytext&biz=bixtext&iservice=123ser&aservice=andservice&agent=1235456&ctx=showcase
-
+        //https://globalcollab.webexconnectsolutions.com/showcaseuniversal?body=Uplift&biz&intent&aservice&agent
             var linkRef = '';
             var messageBody = getUrlParameter('body');
             var biz = getUrlParameter('biz');
@@ -80,8 +80,9 @@
             var agent = getUrlParameter('agent');
 
 
+
             if (iOS() == true) {
-                linkRef = 'https://bcrw.apple.com?service=iMessage&recipient=urn:biz:' + biz + '&body=' + messageBody + '&biz-intent-id=' + intentId;
+                linkRef = 'https://bcrw.apple.com?sms:open?service=iMessage&recipient=urn:biz:' + biz + '&body=' + messageBody + '&biz-intent-id=' + intentId;
             }
             else {
                 linkRef = 'https://businessmessages.google.com/widget/agent/' + agent + '?i=' + aService + '&ctx=' + intentId;
