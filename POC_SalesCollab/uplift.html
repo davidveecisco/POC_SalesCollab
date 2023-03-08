@@ -70,7 +70,7 @@
 
         $(document).ready(function () {
             //body=bodytext&biz=bixtext&iservice=123ser&aservice=andservice&agent=1235456&ctx=showcase
-        //https://globalcollab.webexconnectsolutions.com/showcaseuniversal?body=Uplift&biz&intent&aservice&agent
+            //https://globalcollab.webexconnectsolutions.com/showcaseuniversal?body=Uplift&biz&intent&aservice&agent
             var linkRef = '';
             var messageBody = getUrlParameter('body');
             var biz = getUrlParameter('biz');
@@ -79,16 +79,28 @@
             var aService = getUrlParameter('aservice');
             var agent = getUrlParameter('agent');
             var stop = getUrlParameter('stop');
+            var mode = getUrlParameter('mode');
+
+
 
             console.log('https://bcrw.apple.com/sms:open?service=iMessage&recipient=urn:biz:' + biz + '&biz-intent-id=' + intentId + '&body=' + messageBody);
             console.log('https://businessmessages.google.com/widget/agent/' + agent + '?i=' + aService + '&ctx=' + intentId);
 
             if (iOS() == true) {
-                linkRef = 'https://bcrw.apple.com/sms:open?service=iMessage&recipient=urn:biz:' + biz + '&biz-intent-id=' + intentId + '&body=' + messageBody;
-
+                if (mode == "" || mode == "1" || mode == "2") {
+                    linkRef = 'https://bcrw.apple.com/sms:open?service=iMessage&recipient=urn:biz:' + biz + '&biz-intent-id=' + intentId + '&body=' + messageBody;
+                }
+                else {
+                    linkRef = 'https://www.webex.com/';
+                }
             }
             else {
-                linkRef = 'https://businessmessages.google.com/widget/agent/' + agent + '?i=' + aService + '&ctx=' + intentId;
+                if (mode == "" || mode == "1" || mode == "3") {
+                    linkRef = 'https://businessmessages.google.com/widget/agent/' + agent + '?i=' + aService + '&ctx=' + intentId;
+                }
+                else {
+                    linkRef = 'https://www.webex.com/';
+                }
             }
 
             if (stop != "1") {
